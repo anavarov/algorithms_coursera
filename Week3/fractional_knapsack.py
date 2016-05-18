@@ -19,13 +19,7 @@ def get_optimal_value(capacity, weights, values):
                 partial_value = capacity/weights[max_index]
                 value = value + values[max_value]*partial_value
                 capacity = 0
-        if len(weights) == 1 and capacity > 0:
-            if weights[0] <= capacity:
-                value = value + values[0]
-            else:
-                partial_value = capacity/weights[0]
-                value = value + values[0]*partial_value
-    else:
+    if len(weights) == 1 and capacity > 0:
         if weights[0] <= capacity:
             value = value + values[0]
         else:
